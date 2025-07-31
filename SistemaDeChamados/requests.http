@@ -1,0 +1,48 @@
+### ==============================================
+### ADICIONANDO NOVOS USUÁRIOS E CHAMADOS
+### ==============================================
+
+### 1. Criar um NOVO usuário: Carla Pereira
+POST http://localhost:8081/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "Carla Pereira",
+  "email": "carla.pereira@example.com"
+}
+
+### 2. Criar um chamado para a usuária Carla Pereira
+POST http://localhost:8082/api/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Lentidão no teste do LED",
+  "descricao": "Ao tentar realizar o teste o mesmo apresenta bastante lentidão",
+  "prioridade": "ALTA",
+  "solicitanteId": 2
+}
+
+### ----------------------------------------------
+
+### 3. Criar OUTRO usuário: Carlos Souza
+POST http://localhost:8081/api/usuarios
+Content-Type: application/json
+
+{
+  "nome": "João Souza",
+  "email": "João.souza@example.com"
+}
+
+### 4. Criar um chamado para o usuário Carlos Souza
+POST http://localhost:8082/api/chamados
+Content-Type: application/json
+
+{
+  "titulo": "Solicitação de acesso ao FF",
+  "descricao": "Preciso de acesso para verifiacar algumas OPs",
+  "prioridade": "BAIXA",
+  "solicitanteId": 3
+}
+
+### Listar TODOS os chamados com detalhes de usuário e responsável
+GET http://localhost:8082/api/chamados
